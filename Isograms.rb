@@ -15,3 +15,12 @@ def is_isogram(string)
     return false if freqs[x] > 1}
   return true
 end
+
+# def is_isogram(string)
+#   string.downcase.chars.uniq == string.downcase.chars
+# end
+#
+# и вот это
+# def is_isogram(string)
+#   string.length == string.downcase.chars.uniq.count
+# end
