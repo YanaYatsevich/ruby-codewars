@@ -40,4 +40,15 @@ end
 #   friends.grep(/\A.{4}\z/)
 # end
 #
+# def friend(friends)
+#   #your code here
+#   friend_array = []
+#   friends.each { |name|
+#     if name.length == 4
+#       friend_array << name
+#     end
+#   }
+#   return friend_array
+# end
+#
 # Итог - даже на codewars никто не сделал решения чтобы прошел тест где в массиве есть значение "1234"
