@@ -60,3 +60,8 @@ end
 # def get_sum(a,b)
 #   ([a,b].min..[a,b].max).sum
 # end
+#
+# Реш 5
+# def get_sum(a,b)
+#   (a <= b ? a..b : b..a).sum
+# end

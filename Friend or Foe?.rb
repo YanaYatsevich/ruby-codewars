@@ -30,16 +30,17 @@ end
 
 # Решения codewars
 #
-# как мое но через select
+# Реш 1 - как мое но через select
 # def friend(friends)
 #   friends.select { |name| name.length == 4 }
 # end
 #
-# Pешение через регулярку, но я в такое не умею
+# Pеш 2 - через регулярку, но я в такое не умею
 # def friend(friends)
 #   friends.grep(/\A.{4}\z/)
 # end
 #
+# Реш 3
 # def friend(friends)
 #   #your code here
 #   friend_array = []
