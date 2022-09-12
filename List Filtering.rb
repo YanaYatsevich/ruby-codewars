@@ -19,15 +19,15 @@ end
 #
 # Реш 2 - как 1 но наоборот
 # def filter_list(l)
-# l.select{|i| i.is_a?(Integer)}
+# l.select{|i| i.is_a?(Integer)} #явл ли i объектом класса Integer
 # end
 #
 # Реш 3
 # def filter_list(l)
-#  l.grep(Numeric)
+#  l.grep(Numeric) # особенность grep что в него можно засунуть класс
 # end
 #
 # Реш 4
 # def filter_list(l)
-#   l.delete_if { |x| x.class == String }
+#   l.delete_if { |x| x.class == String } # == сравнивает объект с объектом
 # end
