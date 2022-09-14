@@ -1,3 +1,4 @@
+# https://www.codewars.com/kata/5412509bd436bd33920011bc/train/ruby
 # Usually when you buy something, you're asked whether your credit card number,
 # phone number or answer to your most secret question is still correct.
 # However, since someone could look over your shoulder,
