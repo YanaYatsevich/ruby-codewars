@@ -6,7 +6,6 @@
 # "abcde" -> 0 # no characters repeats more than once
 # "aabbcde" -> 2 # 'a' and 'b'
 
-
 # Старое решение - не все тесты проходят
 # def duplicate_count(text) # text = '9uuuVpHdS75mvCyI'
 #   text.downcase.chars.uniq.each { |x| text.sub!(x, "")} # text => "uuVHSCI"  не учитывает регистр
@@ -22,11 +21,11 @@
 
 # Мое решение
 def duplicate_count(text)
-freqs = {}
-freqs.default = 0
-text.downcase.each_char { |char| freqs[char] += 1}
-a = text.downcase.chars.map {|x| freqs[x] > 1 ? x : ""}.join
-a.chars.uniq.count
+  freqs = {}
+  freqs.default = 0
+  text.downcase.each_char { |char| freqs[char] += 1 }
+  a = text.downcase.chars.map { |x| freqs[x] > 1 ? x : "" }.join
+  a.chars.uniq.count
 end
 
 # Решения codewars
