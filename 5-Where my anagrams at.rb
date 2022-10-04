@@ -25,8 +25,10 @@ end
 #   words.select{|w| w.sum == word.sum}
 # end
 #
-# Реш 3 - разобрать решение
-# require 'set'
+# Реш 3 - permutation - считывает все возможные перестановки
+# включает ли перестановка символов в слове word , слова которые находятся в words
+#
+# require 'set' # это подключение какого то гема?
 #
 # def anagrams(word, words)
 #   words.select {|w| word.chars.permutation.include? w.chars}
