@@ -1,28 +1,34 @@
 class Book
+
+  attr_accessor :title, :author, :chapter, :price
+
+  def initialize(title, author, chapter)
+    @title = title
+    @author = author
+    @chapter = chapter
+    @price = price
+  end
+
   def open
-    # open book
-  end
-
-  def next_page
-    #  change to the next page
-  end
-
-  def previous_page
-    #  change to the previous page
+    puts "I start read the #{@title} of #{@author} "
   end
 
   def close
-    # close book
+    puts "#{@chapter} is a last chapter. See you soon."
+  end
+
+  def to_s
+    "#{@title}, #{@author} - #{@price}"
   end
 
   private
 
   def size
-    # < 30 MB
+    puts "Small size < 30 MB"
   end
 
   def type
-    # jpeg
+    puts "My type is jpeg"
   end
 end
 
@@ -31,26 +37,34 @@ class Novel < Book
   private
 
   def type
-    # fb2
+    puts "My type is fb2"
   end
 end
 
 class Manga < Book
+  attr_accessor :color
+
   def scroll
-    # scroll book
+    puts "You can scroll chapter!"
   end
 
   private
 
   def size
-    # > 50 MB
+    puts "Big size > 50 MB"
   end
 end
 
 class Comics < Book
-  private
+  include Converter
 
-  def size
-    # > 50 MB
+end
+
+module Converter
+  EXCHANGE_RATE_PER_1_EUR = 25.0
+
+  def exchange_to_usd
+    converted_amount = (@price / EXCHANGE_RATE_PER_1_EUR).round
+    puts "#{@price} USD"
   end
 end
