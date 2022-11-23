@@ -1,3 +1,12 @@
+module Converter
+  EXCHANGE_RATE_PER_1_EUR = 25.0
+
+  def exchange_to_usd
+    converted_amount = (@price / EXCHANGE_RATE_PER_1_EUR).round
+    puts "#{@title}, #{@author} - #{converted_amount} USD"
+  end
+end
+
 class Book
 
   attr_accessor :title, :author, :chapter, :price
@@ -17,14 +26,8 @@ class Book
     puts "#{@chapter} is a last chapter. See you soon."
   end
 
-  def to_s
-    "#{@title}, #{@author} - #{@price}"
-  end
-
-  private
-
-  def size
-    puts "Small size < 30 MB"
+  def to_s #метод вызывается при вызове объекта
+    "#{@title}, #{@author} - #{@price} EUR"
   end
 
   def type
@@ -33,26 +36,30 @@ class Book
 end
 
 class Novel < Book
-
-  private
-
   def type
     puts "My type is fb2"
   end
 end
 
 class Manga < Book
-  attr_accessor :color
+
+  def initialize(title, author, chapter, price, has_color)
+    @title, @author, @chapter, @price, @has_color = title, author, chapter, price, has_color
+  end
 
   def scroll
     puts "You can scroll chapter!"
   end
 
-  private
-
-  def size
-    puts "Big size > 50 MB"
+  def manga_has_color?
+    has_color?
   end
+
+  private
+  def has_color?
+    puts @has_color
+  end
+
 end
 
 class Comics < Book
@@ -60,11 +67,18 @@ class Comics < Book
 
 end
 
-module Converter
-  EXCHANGE_RATE_PER_1_EUR = 25.0
+com1 = Comics.new("My comics", "Pol A.K.", 14, 50)
+man1 = Manga.new("My manga", "Sok C.T.", 45, 250, true)
 
-  def exchange_to_usd
-    converted_amount = (@price / EXCHANGE_RATE_PER_1_EUR).round
-    puts "#{@price} USD"
-  end
-end
+
+puts com1
+puts com1.exchange_to_usd
+
+puts man1
+man1.manga_has_color?
+
+
+
+
+
+
